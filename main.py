@@ -30,7 +30,7 @@ def task4():
     name = input("Как тебя зовут? ")
     try:
         age = int(input("Сколько тебе лет? "))
-        print(f"Привет, {name}. Твой возраст {age}")
+        print(f"Привет, {name}. Твой возраст - {age} ")
     except ValueError:
         print("Это строка, а нужно число")
     return
@@ -104,14 +104,17 @@ def task10():
 def surprise():
     variants_list = ["камень", "ножницы", "бумага"]
     coins = 10
-    print("был введен секретный код")
+    print("Был введен секретный код\nЗагрузка")
     time.sleep(2)
-    print(f"Приветствую в игре 'камень-ножницы-бумага'!!\nНачальное количество монет: {coins}")
+    print(f"Приветствую в игре 'камень-ножницы-бумага'!!\nЦель игры - собрать 25 монет\nНачальное количество монет: {coins}")
     while True:
         try:
             user_choice = int(input("1)камень 2)ножницы 3)бумага 4)выход\n "))
-            if coins == 0 or user_choice == 4:
+            if coins < 0 or user_choice == 4:
                 print("игра закончена")
+                break
+            if coins >= 25:
+                print("вы выиграли")
                 break
             computer_choice = random.choice(variants_list)
             print(f"компьютер: {computer_choice}")
