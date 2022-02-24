@@ -110,7 +110,7 @@ def surprise():
     while True:
         try:
             user_choice = int(input("1)камень 2)ножницы 3)бумага 4)выход\n "))
-            if coins < 0 or user_choice == 4:
+            if coins <= 0 or user_choice == 4:
                 print("игра закончена")
                 break
             if coins >= 25:
